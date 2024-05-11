@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Web Development Workshop",
+    "description": "Learn the basics of web development with HTML, CSS, and JavaScript.",
+    "event_date": "2024-06-15",
+    "organizer": "CodeMaster Institute"
+  },
+  {
+    "title": "Art Exhibition: Modern Art Trends",
+    "description": "Explore the latest trends in modern art with our curated exhibition.",
+    "event_date": "2024-07-10",
+    "organizer": "City Art Gallery"
+  },
+  {
+    "title": "Tech Conference 2024",
+    "description": "Join industry leaders to discuss the latest advancements in technology.",
+    "event_date": "2024-08-20",
+    "organizer": "TechVision Events"
+  },
+  {
+    "title": "Cooking Masterclass: Italian Cuisine",
+    "description": "Master the art of Italian cooking with our hands-on masterclass.",
+    "event_date": "2024-09-05",
+    "organizer": "Chef Giovanni's Kitchen"
+  },
+  {
+    "title": "Startup Pitch Competition",
+    "description": "Pitch your startup idea to investors and win funding for your venture.",
+    "event_date": "2024-10-12",
+    "organizer": "VentureX Inc."
+  },
+  {
+    "title": "Fitness Bootcamp",
+    "description": "Get fit and healthy with our intense fitness bootcamp program.",
+    "event_date": "2024-11-02",
+    "organizer": "FitFusion Fitness Center"
+  },
+  {
+    "title": "Digital Marketing Summit",
+    "description": "Learn the latest strategies and trends in digital marketing.",
+    "event_date": "2024-12-08",
+    "organizer": "DigitalX Marketing Agency"
+  },
+  {
+    "title": "Book Launch: Fantasy Adventure Series",
+    "description": "Join us for the launch of the latest book in the popular fantasy adventure series.",
+    "event_date": "2025-01-20",
+    "organizer": "Fiction World Publishing"
+  },
+  {
+    "title": "Fashion Show: Spring Collection",
+    "description": "Experience the glamour of the runway with our Spring Collection fashion show.",
+    "event_date": "2025-02-15",
+    "organizer": "FashionElite Magazine"
+  },
+  {
+    "title": "Music Concert: Jazz Under the Stars",
+    "description": "Enjoy an evening of smooth jazz music under the stars.",
+    "event_date": "2025-03-30",
+    "organizer": "MelodyMakers Productions"
+  }
+]
