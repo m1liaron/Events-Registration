@@ -37,6 +37,10 @@ const EventsList = () => {
         setSortBy(sort);
     }
 
+    const isDescLessOneHundred = (event) => {
+        return event.description.length > 100 ? `${event.description.slice(0, 100)}...` : event.description
+    }
+
     return (
         <div className="p-5">
             <DropdownButton id="dropdown-basic-button" title="Sort by">
@@ -53,7 +57,7 @@ const EventsList = () => {
                             <Card style={{ width: '18rem' }} key={event._id}>
                                 <Card.Body>
                                     <Card.Title>{event.title}</Card.Title>
-                                    <Card.Text>{event.description}</Card.Text>
+                                    <Card.Text>{isDescLessOneHundred(event)}</Card.Text>
                                     <Col className="justify-content-between d-flex">
                                         <NavLink to={`/register/${event._id}`}>
                                             <Button variant="primary">Register</Button>

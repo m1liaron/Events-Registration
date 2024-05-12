@@ -1,106 +1,124 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from "react";
-import axios from "axios";
 import {useNavigate, useParams} from "react-router-dom";
 import {CardTitle} from "react-bootstrap";
+import { Formik, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios';
 
 const RegisterForm = () => {
-    const [fullName, setFullName] = useState('');
-    const [email, setEmail] = useState('');
-    const [birth, setBirth] = useState('');
-    const [source, setSource] = useState('');
-
     let navigate = useNavigate()
 
-    const navigateBack = () => {
-        navigate('/')
-    }
-
     const {id} = useParams()
-
-    const RegisterOnEvent = () => {
+    const RegisterOnEvent = (values) => {
         const data = {
-            fullName,
-            email,
-            date_of_birth: birth,
-            know_from: source,
-            event_id: id
-        }
+            fullName: values.fullName,
+            email: values.email,
+            date_of_birth: values.birth,
+            know_from: values.source,
+            event_id: id,
+        };
+
          axios.post(`http://localhost:3000/participants`, data)
             .then((response) => {
                 console.log(response)
-                navigateBack()
+                navigate(-1)
             }).catch((error) => {
-                console.eror(error)
+                console.error(error)
          })
     }
 
+    const initialValues = {
+        fullName: '',
+        email: '',
+        birth: '',
+        source: '',
+    };
+
+    const validationSchema = Yup.object({
+        fullName: Yup.string().required('Full name is required'),
+        email: Yup.string().email('Invalid email address').required('Email is required'),
+        birth: Yup.string().required('Date of birth is required'),
+        source: Yup.string().required('Please select where you heard about us'),
+    });
+
     return (
-        <Form className='p-5' onSubmit={RegisterOnEvent}>
-            <CardTitle>Form registration</CardTitle>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Formik
+            initialValues={initialValues}
+            onSubmit={RegisterOnEvent}
+            validationSchema={validationSchema}
+        >
+            {(formik) => (
+                <Form className="p-5" onSubmit={formik.handleSubmit}>
+                    <CardTitle>Form registration</CardTitle>
+                    <div className="mb-3">
+                        <label htmlFor="fullName" className="form-label">
+                            Full name
+                        </label>
+                        <Field
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter full name"
+                            className="form-control"
+                        />
+                        <ErrorMessage name="fullName" component="div" className="text-danger" />
+                    </div>
 
-                <Form.Label>Full name</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Enter full name"
-                    onChange={(e) => setFullName(e.target.value)}
-                />
-            </Form.Group>
+                    <div className="mb-3">
+                        <label htmlFor="email" className="form-label">
+                            Email address
+                        </label>
+                        <Field
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter email"
+                            className="form-control"
+                        />
+                        <ErrorMessage name="email" component="div" className="text-danger" />
+                    </div>
 
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
+                    <div className="mb-3">
+                        <label htmlFor="birth" className="form-label">
+                            Date of birth
+                        </label>
+                        <Field
+                            type="text"
+                            id="birth"
+                            name="birth"
+                            placeholder="Date of birth"
+                            className="form-control"
+                        />
+                        <ErrorMessage name="birth" component="div" className="text-danger" />
+                    </div>
 
-            <Form.Group className="mb-3" controlId="formBasicDate">
-                <Form.Label>Date of birth</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Date of birth"
-                    onChange={(e) => setBirth(e.target.value)}
-                />
-            </Form.Group>
+                    <div className="mb-3">
+                        <label className="form-label">Where did you hear about us?</label>
+                        <div className="d-flex gap-2">
+                            <label>
+                                <Field type="radio" name="source" value="Social media" />
+                                Social media
+                            </label>
+                            <label>
+                                <Field type="radio" name="source" value="Friends" />
+                                Friends
+                            </label>
+                            <label>
+                                <Field type="radio" name="source" value="Found myself" />
+                                Found myself
+                            </label>
+                        </div>
+                        <ErrorMessage name="source" component="div" className="text-danger" />
+                    </div>
 
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Label>Where did you hear about us?</Form.Label>
-                <div className="d-flex gap-2">
-                    <Form.Check
-                        type="radio"
-                        label="Social media"
-                        name="source"
-                        value="Social media"
-                        onChange={e => setSource(e.target.value)}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Friends"
-                        name="source"
-                        value="Friends"
-                        onChange={e => setSource(e.target.value)}
-                    />
-                    <Form.Check
-                        type="radio"
-                        label="Found myself"
-                        name="source"
-                        value="Found myself"
-                        onChange={e => setSource(e.target.value)}
-                    />
-                </div>
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-                Register
-            </Button>
-        </Form>
+                    <Button type="submit" className="btn btn-primary">
+                        Register
+                    </Button>
+                </Form>
+            )}
+        </Formik>
     );
 }
 
