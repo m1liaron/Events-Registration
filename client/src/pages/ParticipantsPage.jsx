@@ -6,7 +6,7 @@ import BackButton from "../components/BackButton.jsx";
 import {CardTitle} from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Button from "react-bootstrap/Button";
+import ParticipantChart from "../components/Participant/ParticipantChart.jsx";
 
 const ParticipantsPage = () => {
     const [participants, setParticipants] = useState([]);
@@ -48,10 +48,19 @@ const ParticipantsPage = () => {
         }))
     }
 
+    const participantsRegData = participants.map(item => item.registration_date);
+
     return (
         <div className='p-5'>
             <BackButton/>
-            {participants.length > 0 && <SearchParticipants search={search} setSearch={setSearch}/>}
+                {participants.length > 0 &&
+                    (
+                        <div className='d-flex justify-content-between'>
+                            <SearchParticipants search={search} setSearch={setSearch}/>
+                            <ParticipantChart participantsRegData={participantsRegData}/>
+                        </div>
+                    )
+                }
             <div className='d-flex justify-content-center flex-wrap gap-4'>
                 {participants.length ? (
                     searchedParticipants.map((participant) => (
@@ -63,7 +72,11 @@ const ParticipantsPage = () => {
                         </Card>
                     ))
                 ) : (
-                    <CardTitle>No participants</CardTitle>
+                    <div>
+                        <h2>No participants</h2>
+                        <img
+                            src="https://media3.giphy.com/media/mlvseq9yvZhba/giphy.gif?cid=6c09b95280iwtpntiyh6u2jkwanu6xiink315hegg08ldc0k&ep=v1_gifs_search&rid=giphy.gif&ct=g"/>
+                    </div>
                 )}
             </div>
         </div>
@@ -79,7 +92,7 @@ const SearchParticipants = ({search, setSearch}) => {
     return (
         <div className='p-2' >
             <h4>Search</h4>
-            <InputGroup className="mb-3 w-25">
+            <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
                 <Form.Control
                     placeholder="Email"
@@ -89,7 +102,7 @@ const SearchParticipants = ({search, setSearch}) => {
                 />
             </InputGroup>
 
-            <InputGroup className="mb-3 w-25">
+            <InputGroup className="mb-3">
                 <Form.Control
                     placeholder="Participant's full name"
                     aria-label="Participant's full name"

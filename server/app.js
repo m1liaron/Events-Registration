@@ -9,11 +9,10 @@ app.use(cors());
 const connectDB = require('./db/connect')
 
 // Routes
-const {registerOnEvent, getParticipants} = require('./controllers/participant')
-const getEvents = require('./controllers/event')
-app.post('/participants', registerOnEvent)
-app.get('/participants/:id', getParticipants)
-app.get('/events', getEvents)
+const eventRouter = require('./routes/eventRoutes')
+const participantRouter = require('./routes/participantRouter')
+app.use('/events', eventRouter)
+app.use('/participants', participantRouter)
 
 const port = process.env.PORT || 5000;
 

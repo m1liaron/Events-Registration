@@ -58,5 +58,71 @@
     "description": "Enjoy an evening of smooth jazz music under the stars.",
     "event_date": "2025-03-30",
     "organizer": "MelodyMakers Productions"
+  },
+  {
+    "title": "Art Workshop: Watercolor Painting",
+    "description": "Learn the techniques of watercolor painting from expert artists.",
+    "event_date": "2025-04-10",
+    "organizer": "CreativeBrush Studio"
+  },
+  {
+    "title": "Tech Expo: Future Technologies",
+    "description": "Explore cutting-edge technologies and innovations at our tech expo.",
+    "event_date": "2025-05-25",
+    "organizer": "TechFusion Expo"
+  },
+  {
+    "title": "Food Festival: International Cuisine",
+    "description": "Indulge in a culinary journey with diverse international cuisines at our food festival.",
+    "event_date": "2025-06-15",
+    "organizer": "TasteWorld Events"
+  },
+  {
+    "title": "Startup Workshop: Fundraising Strategies",
+    "description": "Learn effective fundraising strategies for your startup from experienced entrepreneurs.",
+    "event_date": "2025-07-20",
+    "organizer": "StartupBoost Workshop"
+  },
+  {
+    "title": "Yoga Retreat: Mindfulness Meditation",
+    "description": "Rejuvenate your mind and body with our mindfulness yoga retreat in a serene natural setting.",
+    "event_date": "2025-08-10",
+    "organizer": "Serenity Yoga Retreats"
+  },
+  {
+    "title": "Film Screening: Classic Cinema",
+    "description": "Experience the magic of classic cinema with our curated film screening event.",
+    "event_date": "2025-09-05",
+    "organizer": "Cinephile Society"
+  },
+  {
+    "title": "Technology Symposium: AI & Robotics",
+    "description": "Explore the latest advancements in artificial intelligence and robotics at our technology symposium.",
+    "event_date": "2025-10-12",
+    "organizer": "TechSymposium Inc."
+  },
+  {
+    "title": "Fashion Design Workshop: Couture Techniques",
+    "description": "Learn couture techniques and design principles from renowned fashion designers.",
+    "event_date": "2025-11-02",
+    "organizer": "CoutureCraft Academy"
+  },
+  {
+    "title": "Gaming Tournament: eSports Championship",
+    "description": "Compete in our eSports championship and showcase your gaming skills.",
+    "event_date": "2025-12-08",
+    "organizer": "eSportsLeague"
+  },
+  {
+    "title": "Photography Exhibition: Nature & Wildlife",
+    "description": "Discover the beauty of nature and wildlife through stunning photography at our exhibition.",
+    "event_date": "2026-01-20",
+    "organizer": "NatureLens Photography"
+  },
+  {
+    "title": "Business Conference: Leadership Summit",
+    "description": "Gain insights into effective leadership strategies and business management at our conference.",
+    "event_date": "2026-02-15",
+    "organizer": "LeadX Business Conferences"
   }
 ]

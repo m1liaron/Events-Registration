@@ -4,7 +4,7 @@ import BackButton from "../components/BackButton.jsx";
 const EventRegisterPage = () => {
     return (
         <div className='p-5'>
-           <BackButton/>
+            <BackButton/>
             <RegisterForm/>
         </div>
     );

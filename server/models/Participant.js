@@ -18,6 +18,10 @@ const ParticipantScheme = new mongoose.Schema(
             type: String,
             required:true
         },
+        registration_date:{
+            type: Date,
+            default: Date.now,
+        },
         event_id: {
             type: mongoose.Types.ObjectId,
             ref: 'Event',
