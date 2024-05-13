@@ -1,19 +1,34 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import axios from "axios";
 import { useParams} from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import BackButton from "../components/BackButton.jsx";
-import {CardTitle} from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import ParticipantChart from "../components/Participant/ParticipantChart.jsx";
+import BurgerMenu from "../components/BurgerMenu.jsx";
+import ModalComponent from "../components/Modals/Modal.jsx";
 
 const ParticipantsPage = () => {
     const [participants, setParticipants] = useState([]);
     const [search, setSearch] = useState({ email: '', fullName: '' });
     const [searchedParticipants, setSearchedParticipants] = useState([]);
+    const [modal, setModal] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
 
     const {id} = useParams()
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 988);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     useEffect(() => {
         const fetchEvents = async () => {
@@ -52,16 +67,21 @@ const ParticipantsPage = () => {
 
     return (
         <div className='p-5'>
-            <BackButton/>
+                <div className='d-flex justify-content-between align-items-center'>
+                    <BackButton/>
+                    <BurgerMenu showModal={() => setModal(!modal)}/>
+                </div>
                 {participants.length > 0 &&
                     (
                         <div className='d-flex justify-content-between'>
                             <SearchParticipants search={search} setSearch={setSearch}/>
-                            <ParticipantChart participantsRegData={participantsRegData}/>
+                            {!isMobile && (
+                                <ParticipantChart participantsRegData={participantsRegData} />
+                            )}
                         </div>
                     )
                 }
-            <div className='d-flex justify-content-center flex-wrap gap-4'>
+            <div className='d-flex justify-content-center flex-wrap gap-4 overflow-y-auto'>
                 {participants.length ? (
                     searchedParticipants.map((participant) => (
                         <Card style={{ width: '18rem' }} key={participant._id}>
@@ -74,11 +94,13 @@ const ParticipantsPage = () => {
                 ) : (
                     <div>
                         <h2>No participants</h2>
-                        <img
-                            src="https://media3.giphy.com/media/mlvseq9yvZhba/giphy.gif?cid=6c09b95280iwtpntiyh6u2jkwanu6xiink315hegg08ldc0k&ep=v1_gifs_search&rid=giphy.gif&ct=g"/>
+                        <img src="https://media3.giphy.com/media/mlvseq9yvZhba/giphy.gif?cid=6c09b95280iwtpntiyh6u2jkwanu6xiink315hegg08ldc0k&ep=v1_gifs_search&rid=giphy.gif&ct=g"/>
                     </div>
                 )}
             </div>
+            <ModalComponent showModal={modal} setShowModal={setModal} title='Registration per day chart'>
+                <ParticipantChart participantsRegData={participantsRegData} />
+            </ModalComponent>
         </div>
     );
 }

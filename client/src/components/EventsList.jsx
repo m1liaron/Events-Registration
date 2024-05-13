@@ -1,46 +1,33 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios'
+import {useEffect, useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import {Col, Dropdown, DropdownButton} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import LoadingComponent from "./LoadingComponent.jsx";
+import useAxios from "../../hooks/useAxios.js";
+import ModalComponent from "./Modals/Modal.jsx";
+import CalendarComponent from "./Form/Calendar.jsx";
+
+import calendarIcon from '../assets/calendar-icon.png'
 
 const EventsList = () => {
     const [events, setEvents] = useState([])
     const [sortBy, setSortBy] = useState('title');
+    const [filterDate, setFilterDate] = useState('');
     const [page, setPage] = useState(1);
-    const [isLoading, setIsLoading] = useState(false);
     const [haveMore, setHaveMore] = useState(false);
+    const [modalVisible, setModalVisible] = useState(false);
 
-    const fetchMoreEvents = async () => {
-        setIsLoading(true);
-        try {
-            const response = await axios.get(`http://localhost:3000/events?page=${page}&sortBy=${sortBy}`);
-            const {events, haveMoreEvents} = response.data
-            setEvents(events);
-            setHaveMore(haveMoreEvents)
-        } catch (error) {
-            console.error('Error fetching more events:', error);
-            setIsLoading(false);
-        }
-    }
+    const {data, loading, error, fetchData} = useAxios(`http://localhost:3000/events?page=${page}&sortBy=${sortBy}&filterDate=${filterDate}`)
 
     useEffect(() => {
-        fetchMoreEvents()
-    },[page, sortBy])
+        setEvents(data.events);
+        setHaveMore(data.haveMoreEvents);
+    }, [data]);
 
-    // const sortEvents = async () => {
-    //     setIsLoading(true);
-    //     try {
-    //         const response = await axios.get(`http://localhost:3000/events?sortBy=${sortBy}`);
-    //         const {events} = response.data
-    //         setEvents(events);
-    //     } catch (error) {
-    //         console.error('Error fetching more events:', error);
-    //         setIsLoading(false);
-    //     }
-    // }
+    useEffect(() => {
+        fetchData()
+    }, [page, sortBy]);
 
     const isBottomOfPage = () => { // check is user scrolled to bottom
         // Calculate the scroll position
@@ -74,25 +61,49 @@ const EventsList = () => {
         return event.description.length > 100 ? `${event.description.slice(0, 100)}...` : event.description
     }
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const formattedDate = date.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+        const formattedTime = date.toLocaleTimeString('en-GB', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        return `${formattedTime}. ${formattedDate}`;
+    };
 
     return (
         <div className="p-5">
-            <DropdownButton id="dropdown-basic-button" title="Sort by">
-                <Dropdown.Item onClick={() => handleSortChange('title')}>Title</Dropdown.Item>
-                <Dropdown.Item onClick={() => handleSortChange('description')}>Description</Dropdown.Item>
-                <Dropdown.Item onClick={() => handleSortChange('event_date')}>Event Date</Dropdown.Item>
-                <Dropdown.Item onClick={() => handleSortChange('organizer')}>Organizer</Dropdown.Item>
-                {/* Add more sorting options as needed */}
-            </DropdownButton>
+            <div className='d-flex align-items-center gap-2'>
+                <DropdownButton id="dropdown-basic-button" title="Sort by">
+                    <Dropdown.Item onClick={() => handleSortChange('title')}>Title</Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleSortChange('description')}>Description</Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleSortChange('event_date')}>Event Date</Dropdown.Item>
+                    <Dropdown.Item onClick={() => handleSortChange('organizer')}>Organizer</Dropdown.Item>
+                    {/* Add more sorting options as needed */}
+                </DropdownButton>
+                <Button variant="info" onClick={() => setModalVisible(true)}>
+                    <img
+                        alt='calendar'
+                        src={calendarIcon}
+                        style={{width:20, height:20}}
+                    />
+                </Button>
+            </div>
 
-            <h3>{events.length}</h3>
-            {events.length || isLoading ? (
+            <h3>Events: {events?.length}</h3>
+
+            {events || loading ? (
                 <div className="flex-wrap d-flex p-5 gap-5">
-                    {events.map((event) => (
-                        <Card style={{width: '18rem'}} key={event._id}>
+                    {events?.map((event) => (
+                        <Card style={{width: '18rem', height:'292px'}} key={event._id}>
                             <Card.Body>
                                 <Card.Title>{event.title}</Card.Title>
                                 <Card.Text>{isDescLessOneHundred(event)}</Card.Text>
+                                <Card.Text style={{border:'1px solid rgba(0, 0, 0, 0.175)', padding:3, borderRadius:10, textAlign:'center'}}>{formatDate(event.event_date)}</Card.Text>
                                 <Col className="justify-content-between d-flex">
                                     <NavLink to={`/register/${event._id}`}>
                                         <Button variant="primary">Register</Button>
@@ -109,6 +120,10 @@ const EventsList = () => {
             ) : (
                 <LoadingComponent/>
             )}
+
+            <ModalComponent showModal={modalVisible} setShowModal={setModalVisible} title='Filter by date'>
+                <CalendarComponent handleChange={(data) => setFilterDate(data)}/>
+            </ModalComponent>
         </div>
     );
 }

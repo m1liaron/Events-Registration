@@ -70,8 +70,7 @@ const ParticipantChart = ({participantsRegData}) => {
     };
 
     return (
-        <div className='w-50'>
-            <h2>Registrations Chart</h2>
+        <div className='overflow-y-auto'>
             <Bar data={data} options={options} />
         </div>
     );

@@ -6,16 +6,22 @@ import {CardTitle} from "react-bootstrap";
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import CalendarComponent from "./Calendar.jsx";
 
 const RegisterForm = () => {
     let navigate = useNavigate()
 
     const {id} = useParams()
     const RegisterOnEvent = (values) => {
+        const [modalVisible, setModalVisible] = useState(false);
+
+        const date = new Date(values.birth);
+        const formattedDate = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
+
         const data = {
             fullName: values.fullName,
             email: values.email,
-            date_of_birth: values.birth,
+            date_of_birth: formattedDate,
             know_from: values.source,
             event_id: id,
         };
@@ -90,6 +96,9 @@ const RegisterForm = () => {
                             name="birth"
                             placeholder="Date of birth"
                             className="form-control"
+                        />
+                        <CalendarComponent
+                            handleChange={(selectedDate) => formik.setFieldValue('birth', selectedDate)}
                         />
                         <ErrorMessage name="birth" component="div" className="text-danger" />
                     </div>

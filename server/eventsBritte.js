@@ -20,16 +20,16 @@ const options = {
 async function start(){
     try {
         const response = await axios.request(options);
-        let data;
+        let data = []
         for(let key of response.data.data) {
-            data = {
+            data.push({
                 title: key.name,
                 description: key.description,
                 event_data:key.start_time,
                 organizer: 'Sternenko'
-            }
-            console.log(data)
+            })
         }
+        console.log(data)
 
         await connectDB(process.env.MONGO_URI);
         await Event.create(data);

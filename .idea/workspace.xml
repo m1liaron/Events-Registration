@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a34e7e6f-8615-4d50-b49f-89827a81bf7e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/hooks/useAxios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/calendar-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/BurgerMenu.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Form/Calendar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Modals/Modal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utills/formattedDate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/EventsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/EventsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Participant/ParticipantChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Participant/ParticipantChart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Form/RegisterForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/EventRegisterPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/EventRegisterPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/ParticipantsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ParticipantsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/event.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/eventsBritte.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/eventsBritte.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/eventRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/eventRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +29,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="27341" />
+    <option name="totalTimeSeconds" value="34807" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -76,6 +89,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src\assets" />
+      <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\assets\img" />
+      <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src\components\Form" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\server" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration" />
     </key>
@@ -128,6 +144,15 @@
       <workItem from="1715506064844" duration="18191000" />
       <workItem from="1715530424869" duration="2648000" />
       <workItem from="1715533132018" duration="3000" />
+      <workItem from="1715537732508" duration="51000" />
+      <workItem from="1715578084048" duration="564000" />
+      <workItem from="1715584599355" duration="5823000" />
+      <workItem from="1715593117475" duration="341000" />
+      <workItem from="1715593491644" duration="31000" />
+      <workItem from="1715595626908" duration="20000" />
+      <workItem from="1715595677981" duration="46000" />
+      <workItem from="1715595814874" duration="167000" />
+      <workItem from="1715601552716" duration="11646000" />
     </task>
     <task id="LOCAL-00001" summary="middle level&#10;Events board page: add ability to sort events by: title, event date, organizer.&#10;- Event registration page: add form validation&#10;- Event participants page: add ability to search participants by full name, email.">
       <option name="closed" value="true" />
@@ -145,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715530226248</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="get events from api">
+      <option name="closed" value="true" />
+      <created>1715537775880</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715537775880</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +187,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="middle level&#10;Events board page: add ability to sort events by: title, event date, organizer.&#10;- Event registration page: add form validation&#10;- Event participants page: add ability to search participants by full name, email." />
     <MESSAGE value="Events board page: add infinite scroll pagination (when a user scrolls the page, it&#10;automatically loads more events).&#10;- Event participants page: add line/bar chart displaying the amount of registrations per&#10;day for the given event.&#10;no api to save DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Events board page: add infinite scroll pagination (when a user scrolls the page, it&#10;automatically loads more events).&#10;- Event participants page: add line/bar chart displaying the amount of registrations per&#10;day for the given event.&#10;no api to save DB" />
+    <MESSAGE value="get events from api" />
+    <option name="LAST_COMMIT_MESSAGE" value="get events from api" />
   </component>
 </project>

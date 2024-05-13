@@ -1,4 +1,4 @@
-import RegisterForm from "../components/RegisterForm.jsx";
+import RegisterForm from "../components/Form/RegisterForm.jsx";
 import BackButton from "../components/BackButton.jsx";
 
 const EventRegisterPage = () => {
