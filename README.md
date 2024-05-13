@@ -38,7 +38,7 @@ Install server-side dependencies:
 ```
 npm install
 ```
-# or
+## or
 ```
 yarn
 ```
@@ -50,7 +50,7 @@ To run the client-side app in development mode, use:
 cd client
 npm run dev
 ```
-# or
+## or
 ```
 yarn dev
 ```
@@ -62,7 +62,7 @@ To build the client-side app for production, use:
 cd client
 npm run build
 ```
-# or
+## or
 ```
 yarn build
 ```
@@ -75,7 +75,7 @@ To run the server-side app in development mode, use:
 cd server
 npm run dev
 ```
-# or
+## or
 ```
 yarn run dev
 ```
