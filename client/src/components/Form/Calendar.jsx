@@ -30,7 +30,6 @@ function CalendarComponent({handleChange}) {
                 onChange={handleDateChange}
                 value={selectedDate}
                 formatShortDate={formatShortDate}
-                tileDisabled={tileDisabled}
             />
         </div>
     );

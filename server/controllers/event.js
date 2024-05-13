@@ -2,10 +2,15 @@ const Event = require('../models/Event');
 const { StatusCodes } = require('http-status-codes');
 
 const getMoreEvents = async (req,res) => {
-    const {page, limit = 10, sortBy = 'title'} = req.query;
+    const {page, limit = 10, sortBy = 'title', filterDate} = req.query;
 
     try {
         let query = Event.find();
+
+        if (filterDate) {
+            // If filterDate exists, add date filtering to the query
+            query = query.where('event_date').equals(new Date(filterDate));
+        }
 
         const totalEvents = await Event.countDocuments();
         const startIndex = (page - 1) * limit;

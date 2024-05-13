@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a34e7e6f-8615-4d50-b49f-89827a81bf7e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/assets/reset-icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/hooks/useAxios.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useAxios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/EventsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/EventsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Form/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Form/Calendar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/ParticipantsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ParticipantsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utills/formattedDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utills/formatDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/participant.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/participant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/eventsBritte.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/rapidapi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/participantRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/participantRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="34807" />
+    <option name="totalTimeSeconds" value="40729" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -68,17 +77,17 @@
     "nodejs_package_manager_path": "npm",
     "npm.dev.executor": "Run",
     "settings.editor.selected.configurable": "terminal",
-    "ts.external.directory.path": "/home/artur/Завантаження/WebStorm-233.14475.40/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.3.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src\assets" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\assets\img" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src\components\Form" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\server" />
-      <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">

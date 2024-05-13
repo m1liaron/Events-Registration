@@ -4,11 +4,13 @@ import Card from 'react-bootstrap/Card';
 import {Col, Dropdown, DropdownButton} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import LoadingComponent from "./LoadingComponent.jsx";
-import useAxios from "../../hooks/useAxios.js";
+import useAxios from "../hooks/useAxios.js";
 import ModalComponent from "./Modals/Modal.jsx";
 import CalendarComponent from "./Form/Calendar.jsx";
+import resetIcon from '../assets/reset-icon.png'
 
 import calendarIcon from '../assets/calendar-icon.png'
+import {formatDate} from "../utills/formatDate.js";
 
 const EventsList = () => {
     const [events, setEvents] = useState([])
@@ -20,14 +22,17 @@ const EventsList = () => {
 
     const {data, loading, error, fetchData} = useAxios(`http://localhost:3000/events?page=${page}&sortBy=${sortBy}&filterDate=${filterDate}`)
 
+
+    // set data to events state
     useEffect(() => {
         setEvents(data.events);
         setHaveMore(data.haveMoreEvents);
     }, [data]);
 
+    // get data if change page, sortBy and filterData, and also on first render😥
     useEffect(() => {
         fetchData()
-    }, [page, sortBy]);
+    }, [page, sortBy, filterDate]);
 
     const isBottomOfPage = () => { // check is user scrolled to bottom
         // Calculate the scroll position
@@ -39,17 +44,17 @@ const EventsList = () => {
         return scrollTop + clientHeight >= scrollHeight;
     }
 
-    useEffect(() => {
-        const handleScroll = async () => {
-            if (isBottomOfPage() && haveMore) {
-                setPage((page) => page + 1);
-            }
-        };
+    const ifBottomPageAndMorePage = () => {
+        if (isBottomOfPage() && haveMore) {
+            setPage((page) => page + 1);
+        }
+    }
 
-        window.addEventListener('scroll', handleScroll);
+    useEffect(() => {
+        window.addEventListener('scroll', ifBottomPageAndMorePage);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', ifBottomPageAndMorePage);
         }
     }, [haveMore]);
 
@@ -61,19 +66,9 @@ const EventsList = () => {
         return event.description.length > 100 ? `${event.description.slice(0, 100)}...` : event.description
     }
 
-    const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        const formattedDate = date.toLocaleDateString('en-GB', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric'
-        });
-        const formattedTime = date.toLocaleTimeString('en-GB', {
-            hour: '2-digit',
-            minute: '2-digit'
-        });
-        return `${formattedTime}. ${formattedDate}`;
-    };
+    const resetFilters = () => {
+        setFilterDate('');
+    }
 
     return (
         <div className="p-5">
@@ -83,43 +78,62 @@ const EventsList = () => {
                     <Dropdown.Item onClick={() => handleSortChange('description')}>Description</Dropdown.Item>
                     <Dropdown.Item onClick={() => handleSortChange('event_date')}>Event Date</Dropdown.Item>
                     <Dropdown.Item onClick={() => handleSortChange('organizer')}>Organizer</Dropdown.Item>
-                    {/* Add more sorting options as needed */}
                 </DropdownButton>
-                <Button variant="info" onClick={() => setModalVisible(true)}>
+                <div className='d-flex align-items-center g-1'>
+                    <Button variant="info" onClick={() => setModalVisible(true)}>
+                        <img
+                            alt='calendar'
+                            src={calendarIcon}
+                            style={{width: 20, height: 20}}
+                        />
+                    </Button>
+                    {filterDate && (<p className='m-2'>{formatDate(filterDate.toString())}</p>)}
+                </div>
+                <Button variant="info" onClick={resetFilters}>
                     <img
-                        alt='calendar'
-                        src={calendarIcon}
-                        style={{width:20, height:20}}
+                        src={resetIcon}
+                        alt='reset button'
+                        style={{width: 20, height: 20}}
                     />
                 </Button>
+                <h3 style={{textAlign: 'center'}}>Events: {events?.length}</h3>
             </div>
-
-            <h3>Events: {events?.length}</h3>
 
             {events || loading ? (
                 <div className="flex-wrap d-flex p-5 gap-5">
                     {events?.map((event) => (
-                        <Card style={{width: '18rem', height:'292px'}} key={event._id}>
+                        <Card style={{ maxWidth: '18rem' }} key={event._id}>
                             <Card.Body>
                                 <Card.Title>{event.title}</Card.Title>
                                 <Card.Text>{isDescLessOneHundred(event)}</Card.Text>
-                                <Card.Text style={{border:'1px solid rgba(0, 0, 0, 0.175)', padding:3, borderRadius:10, textAlign:'center'}}>{formatDate(event.event_date)}</Card.Text>
-                                <Col className="justify-content-between d-flex">
+                            </Card.Body>
+                            <Card.Footer >
+                                <Card.Text style={{ border: '1px solid rgba(0, 0, 0, 0.175)', padding: 3, borderRadius: 10, textAlign: 'center' }}>{formatDate(event.event_date)}</Card.Text>
+                                <div className="d-flex justify-content-between">
                                     <NavLink to={`/register/${event._id}`}>
                                         <Button variant="primary">Register</Button>
                                     </NavLink>
                                     <NavLink to={`/participants/${event._id}`}>
                                         <Button variant="btn">View</Button>
                                     </NavLink>
-                                </Col>
-                            </Card.Body>
-                        </Card>
-                    ))
+                                </div>
+                            </Card.Footer>
+                        </Card>                    ))
                     }
                 </div>
             ) : (
-                <LoadingComponent/>
+                (!error && (
+                    <LoadingComponent/>
+                ))
             )}
+
+            {filterDate && !events.length ? (
+                <div>
+                    <h4>Not found events by your filter, check another date.😊</h4>
+                </div>
+            ) : null}
+
+            {error && (<h1 className='text-bg-danger'>{error}</h1>)}
 
             <ModalComponent showModal={modalVisible} setShowModal={setModalVisible} title='Filter by date'>
                 <CalendarComponent handleChange={(data) => setFilterDate(data)}/>

@@ -40,3 +40,5 @@ async function start(){
     }
 }
 start()
+
+// Here i make request on rapidapi.com for get events and save to db

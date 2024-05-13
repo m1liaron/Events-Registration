@@ -1,6 +1,5 @@
 const Participant = require('../models/Participant');
 const { StatusCodes } = require('http-status-codes');
-const Event = require("../models/Event");
 
 const registerOnEvent = async (req, res) => {
     if(!Object.values(req.body)){ // check all inputs filled
@@ -27,4 +26,27 @@ const getParticipants = async (req, res) => {
     }
 };
 
-module.exports = {registerOnEvent, getParticipants};
+const searchParticipants = async (req, res) => {
+    try{
+        const { email, fullName } = req.query;
+        const { id } = req.params;
+
+        let query = { event_id: id };
+
+        if (email) {
+            query.email = { $regex: new RegExp(email, 'i') }; // Case insensitive matching
+        }
+
+        if (fullName) {
+            query.fullName = { $regex: new RegExp(fullName, 'i') }; // Case insensitive matching
+        }
+
+        const participants = await Participant.find(query);
+
+        res.json({ participants });
+    } catch (error){
+        res.status(StatusCodes.BAD_REQUEST).json({ error: error.message });
+    }
+}
+
+module.exports = {registerOnEvent, getParticipants, searchParticipants};
