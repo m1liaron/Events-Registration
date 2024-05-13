@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a34e7e6f-8615-4d50-b49f-89827a81bf7e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/hooks/useAxios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/calendar-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/BurgerMenu.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Form/Calendar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Modals/Modal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/utills/formattedDate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/EventsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/EventsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Participant/ParticipantChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Participant/ParticipantChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/RegisterForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Form/RegisterForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/EventRegisterPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/EventRegisterPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/ParticipantsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ParticipantsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/event.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/eventsBritte.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/eventsBritte.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/eventRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/eventRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,24 +54,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Programmers/progrommer/Js_projects/React/events-registration&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.3.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Programmers/progrommer/Js_projects/React/events-registration",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "terminal",
+    "ts.external.directory.path": "/home/artur/Завантаження/WebStorm-233.14475.40/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src\assets" />
