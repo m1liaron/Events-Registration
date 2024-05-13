@@ -17,52 +17,65 @@ bash
 cd client
 
 Install client-side dependencies:
-bash
+```
 npm install
 # or
 yarn
+```
 
 Navigate back to the root folder:
-bash
+
+```
 cd ..
+```
 
 Navigate to the server folder:
 bash
+```
 cd server
-
+```
 Install server-side dependencies:
-bash
+```
 npm install
+```
 # or
+```
 yarn
+```
 
 UsageRunning the Client
 To run the client-side app in development mode, use:
 
-bash
-
+```
 cd client
 npm run dev
+```
 # or
+```
 yarn dev
+```
 
 This will start a development server at [http://localhost:3000.](http://localhost:5173/)
 To build the client-side app for production, use:
 
-bash
-
+```
 cd client
 npm run build
+```
 # or
+```
 yarn build
+```
 
 This will create a production build in the dist directory.
 Running the Server
 To run the server-side app in development mode, use:
 
-bash
-
+```
 cd server
 npm run dev
+```
 # or
+```
 yarn run dev
+```
