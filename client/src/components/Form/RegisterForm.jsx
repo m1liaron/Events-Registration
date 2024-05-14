@@ -1,6 +1,5 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import {useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {CardTitle} from "react-bootstrap";
 import { Formik, Field, ErrorMessage } from 'formik';
@@ -13,8 +12,6 @@ const RegisterForm = () => {
 
     const {id} = useParams()
     const RegisterOnEvent = (values) => {
-        const [modalVisible, setModalVisible] = useState(false);
-
         const date = new Date(values.birth);
         const formattedDate = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
 

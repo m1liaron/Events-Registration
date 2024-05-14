@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import {Col, Dropdown, DropdownButton} from "react-bootstrap";
+import {Dropdown, DropdownButton} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import LoadingComponent from "./LoadingComponent.jsx";
 import useAxios from "../hooks/useAxios.js";

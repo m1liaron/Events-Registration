@@ -14,11 +14,6 @@ function CalendarComponent({handleChange}) {
         return `${day}.${month}.${year}`;
     };
 
-    const tileDisabled = ({ activeStartDate, date, view }) => {
-        return date >= tomorrow; // Disable dates before or equal to tomorrow
-    };
-
-
     const handleDateChange = (date) => {
         setSelectedDate(date);
         handleChange(date)

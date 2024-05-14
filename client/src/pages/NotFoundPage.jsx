@@ -1,4 +1,3 @@
-import React from 'react';
 import notFound from '../assets/not-found.webp';
 import BackButton from '../components/BackButton.jsx';
 

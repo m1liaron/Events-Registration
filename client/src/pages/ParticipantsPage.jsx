@@ -3,16 +3,13 @@ import axios from "axios";
 import { useParams} from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import BackButton from "../components/BackButton.jsx";
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import ParticipantChart from "../components/Participant/ParticipantChart.jsx";
 import BurgerMenu from "../components/BurgerMenu.jsx";
 import ModalComponent from "../components/Modals/Modal.jsx";
-import Button from "react-bootstrap/Button";
 import useAxios from "../hooks/useAxios.js";
 import LoadingComponent from "../components/LoadingComponent.jsx";
-import resetIcon from '../assets/reset-icon.png'
 import noParticipantsIcon from '../assets/no_participants.webp'
+import SearchParticipants from "../components/Participant/SearchParticipants.jsx";
 
 const ParticipantsPage = () => {
     const [participants, setParticipants] = useState([]);
@@ -76,8 +73,7 @@ const ParticipantsPage = () => {
                 )
             }
 
-
-            {participants?.length ? (
+            {participants?.length && !loading ? (
                 <div className='d-flex justify-content-center flex-wrap gap-4 overflow-y-auto'>
                     {
                         participants?.map((participant) => (
@@ -104,7 +100,7 @@ const ParticipantsPage = () => {
             )
             }
             {loading && <LoadingComponent/>}
-            {error && (<h1 className='text-bg-danger'>{error}</h1>)}
+            <h1 className='text-bg-danger'>{error}</h1>
             <div>
                 <ModalComponent showModal={modal} setShowModal={setModal} title='Registration per day chart'>
                     <ParticipantChart participantsRegData={participantsRegData}/>
@@ -113,53 +109,5 @@ const ParticipantsPage = () => {
         </div>
     );
 }
-
-const SearchParticipants = ({search, setSearch, onSearch, fetchData}) => {
-
-    const handleChange = (e, key) => {
-        setSearch({...search, [key]: e.target.value});
-    }
-    const resetSearch = async () => {
-        await setSearch({email: '', fullName: ''});
-        fetchData()
-    }
-
-    return (
-        <div className='p-2'>
-            <h4>Search</h4>
-            <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                <Form.Control
-                    placeholder="Email"
-                    aria-label="Email"
-                    aria-describedby="basic-addon1"
-                    value={search.email}
-                    onChange={(e) => handleChange(e, 'email')}
-                />
-            </InputGroup>
-
-            <InputGroup className="mb-3">
-                <Form.Control
-                    placeholder="Participant's full name"
-                    aria-label="Participant's full name"
-                    aria-describedby="basic-addon2"
-                    value={search.fullName}
-                    onChange={(e) => handleChange(e, 'fullName')}
-                />
-            </InputGroup>
-            <div className='d-flex gap-2 align-items-center'>
-                <Button onClick={onSearch}>Search</Button>
-                <Button variant="info" onClick={resetSearch}>
-                    <img
-                        src={resetIcon}
-                        alt='reset button'
-                        style={{width: 20, height: 20}}
-                    />
-                </Button>
-            </div>
-        </div>
-    )
-}
-
 
 export default ParticipantsPage;
