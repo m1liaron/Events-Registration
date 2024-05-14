@@ -18,7 +18,7 @@ const ParticipantsPage = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
 
     const {id} = useParams()
-    const {data, loading, error, fetchData} = useAxios(`http://localhost:3000/participants/${id}`);
+    const {data, loading, error, fetchData} = useAxios(`https://events-registration-server.vercel.app/participants/${id}`);
 
     useEffect(() => {
         if (data) {
@@ -40,7 +40,7 @@ const ParticipantsPage = () => {
 
     const searchParticipants = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/participants/${id}/search?name=${search.fullName}&email=${search.email}`);
+            const response = await axios.get(`https://events-registration-server.vercel.app/participants/${id}/search?name=${search.fullName}&email=${search.email}`);
             setParticipants(response.data.participants);
         } catch (error) {
             console.error(error.message);
