@@ -99,16 +99,21 @@ const EventsList = () => {
                 <h3 style={{textAlign: 'center'}}>Events: {events?.length}</h3>
             </div>
 
-            {events || loading ? (
+            {events && (
                 <div className="flex-wrap d-flex p-5 gap-5">
                     {events?.map((event) => (
-                        <Card style={{ maxWidth: '18rem' }} key={event._id}>
+                        <Card style={{maxWidth: '19rem', minWidth:'15rem'}} key={event._id}>
                             <Card.Body>
                                 <Card.Title>{event.title}</Card.Title>
                                 <Card.Text>{isDescLessOneHundred(event)}</Card.Text>
                             </Card.Body>
-                            <Card.Footer >
-                                <Card.Text style={{ border: '1px solid rgba(0, 0, 0, 0.175)', padding: 3, borderRadius: 10, textAlign: 'center' }}>{formatDate(event.event_date)}</Card.Text>
+                            <Card.Footer>
+                                <Card.Text style={{
+                                    border: '1px solid rgba(0, 0, 0, 0.175)',
+                                    padding: 3,
+                                    borderRadius: 10,
+                                    textAlign: 'center'
+                                }}>{formatDate(event.event_date)}</Card.Text>
                                 <div className="d-flex justify-content-between">
                                     <NavLink to={`/register/${event._id}`}>
                                         <Button variant="primary">Register</Button>
@@ -118,14 +123,12 @@ const EventsList = () => {
                                     </NavLink>
                                 </div>
                             </Card.Footer>
-                        </Card>                    ))
+                        </Card>))
                     }
                 </div>
-            ) : (
-                (!error && (
-                    <LoadingComponent/>
-                ))
             )}
+
+            {loading && <LoadingComponent/> }
 
             {filterDate && !events.length ? (
                 <div>

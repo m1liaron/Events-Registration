@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a34e7e6f-8615-4d50-b49f-89827a81bf7e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/assets/reset-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/no_participants.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/not-found.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/NotFoundPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/hooks/useAxios.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useAxios.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/EventsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/EventsList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Form/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Form/Calendar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/LoadingComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/LoadingComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/ParticipantsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ParticipantsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utills/formattedDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utills/formatDate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/event.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/participant.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/participant.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/eventsBritte.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/rapidapi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/participantRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/participantRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="40729" />
+    <option name="totalTimeSeconds" value="44159" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -31,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="JSX File" />
         <option value="JavaScript File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -63,28 +61,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Programmers/progrommer/Js_projects/React/events-registration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "terminal",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.3.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programmers/progrommer/Js_projects/React/events-registration&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.3.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src\assets" />
+      <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\assets\img" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src\components\Form" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\server" />
@@ -147,6 +145,7 @@
       <workItem from="1715595677981" duration="46000" />
       <workItem from="1715595814874" duration="167000" />
       <workItem from="1715601552716" duration="11646000" />
+      <workItem from="1715666744632" duration="3896000" />
     </task>
     <task id="LOCAL-00001" summary="middle level&#10;Events board page: add ability to sort events by: title, event date, organizer.&#10;- Event registration page: add form validation&#10;- Event participants page: add ability to search participants by full name, email.">
       <option name="closed" value="true" />
@@ -172,16 +171,26 @@
       <option name="project" value="LOCAL" />
       <updated>1715537775880</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="rewrite participants on custom hook and make search request, &#10;events: calendar filter by date">
+      <option name="closed" value="true" />
+      <created>1715633743055</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715633743055</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="middle level&#10;Events board page: add ability to sort events by: title, event date, organizer.&#10;- Event registration page: add form validation&#10;- Event participants page: add ability to search participants by full name, email." />
     <MESSAGE value="Events board page: add infinite scroll pagination (when a user scrolls the page, it&#10;automatically loads more events).&#10;- Event participants page: add line/bar chart displaying the amount of registrations per&#10;day for the given event.&#10;no api to save DB" />
     <MESSAGE value="get events from api" />
-    <option name="LAST_COMMIT_MESSAGE" value="get events from api" />
+    <MESSAGE value="rewrite participants on custom hook and make search request, &#10;events: calendar filter by date" />
+    <option name="LAST_COMMIT_MESSAGE" value="rewrite participants on custom hook and make search request, &#10;events: calendar filter by date" />
   </component>
 </project>

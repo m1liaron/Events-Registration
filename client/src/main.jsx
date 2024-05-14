@@ -10,6 +10,7 @@ import HomePage from "./pages/HomePage.jsx";
 import "bootstrap/dist/css/bootstrap.min.css"
 import EventRegisterPage from "./pages/EventRegisterPage.jsx";
 import ParticipantsPage from "./pages/ParticipantsPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
         path: "/participants/:id",
         element: <ParticipantsPage/>
+    },
+    {
+        path:'*',
+        element: <NotFoundPage/>
     }
 ]);
 

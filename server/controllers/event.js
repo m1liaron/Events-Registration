@@ -22,7 +22,14 @@ const getMoreEvents = async (req,res) => {
         if (page > 1) {
             // Fetch events for the previous page
             const prevStartIndex = 0;
-            previousEvents = await Event.find().sort(sortBy).skip(prevStartIndex).limit(startIndex);
+            let prevQuery = Event.find().sort(sortBy).skip(prevStartIndex).limit(startIndex);
+
+            if (filterDate) {
+                // If filterDate exists, apply the same date filtering to the previous events query
+                prevQuery = prevQuery.where('event_date').equals(new Date(filterDate));
+            }
+
+            previousEvents = await prevQuery;
         }
 
         const haveMoreEvents = endIndex < totalEvents;

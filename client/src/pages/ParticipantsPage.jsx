@@ -12,6 +12,7 @@ import Button from "react-bootstrap/Button";
 import useAxios from "../hooks/useAxios.js";
 import LoadingComponent from "../components/LoadingComponent.jsx";
 import resetIcon from '../assets/reset-icon.png'
+import noParticipantsIcon from '../assets/no_participants.webp'
 
 const ParticipantsPage = () => {
     const [participants, setParticipants] = useState([]);
@@ -53,42 +54,60 @@ const ParticipantsPage = () => {
 
     return (
         <div className='p-5'>
-                <div className='d-flex justify-content-between align-items-center'>
-                    <BackButton/>
+            <div className='d-flex justify-content-between align-items-center'>
+                <BackButton/>
+                {participants?.length > 0 && (
                     <BurgerMenu showModal={() => setModal(!modal)}/>
-                </div>
-                {participants?.length > 0 &&
-                    (
-                        <div className='d-flex justify-content-between'>
-                                <SearchParticipants
-                                    search={search}
-                                    setSearch={setSearch}
-                                    onSearch={searchParticipants}
-                                    fetchData={fetchData}
-                                />
-                            {!isMobile && (
-                                <ParticipantChart participantsRegData={participantsRegData} />
-                            )}
-                        </div>
-                    )
-                }
-            <div className='d-flex justify-content-center flex-wrap gap-4 overflow-y-auto'>
-                {!loading ? (
-                    participants?.map((participant) => (
-                        <Card style={{ width: '18rem' }} key={participant._id}>
-                            <Card.Body>
-                                <Card.Title>{participant.fullName}</Card.Title>
-                                <Card.Title>{participant.email}</Card.Title>
-                            </Card.Body>
-                        </Card>
-                    ))
-                ) : (
-                        <LoadingComponent/>
                 )}
             </div>
+            {(participants?.length > 0 || (search.email !== '' || search.fullName !== '')) &&
+                (
+                    <div className='d-flex justify-content-between'>
+                        <SearchParticipants
+                            search={search}
+                            setSearch={setSearch}
+                            onSearch={searchParticipants}
+                            fetchData={fetchData}
+                        />
+                        {!isMobile && (
+                            <ParticipantChart participantsRegData={participantsRegData}/>
+                        )}
+                    </div>
+                )
+            }
+
+
+            {participants?.length ? (
+                <div className='d-flex justify-content-center flex-wrap gap-4 overflow-y-auto'>
+                    {
+                        participants?.map((participant) => (
+                            <Card style={{width: '18rem'}} key={participant._id}>
+                                <Card.Body>
+                                    <Card.Title>{participant.fullName}</Card.Title>
+                                    <Card.Title>{participant.email}</Card.Title>
+                                </Card.Body>
+                            </Card>
+                        ))
+                    }
+                </div>
+            ) : (
+                <div className='d-flex justify-content-center align-items-center h-100'>
+                    <div>
+                        <h1>No participants found</h1>
+                        <img
+                            src={noParticipantsIcon}
+                            alt="No participants"
+                            className='w-75'
+                        />
+                    </div>
+                </div>
+            )
+            }
+            {loading && <LoadingComponent/>}
+            {error && (<h1 className='text-bg-danger'>{error}</h1>)}
             <div>
                 <ModalComponent showModal={modal} setShowModal={setModal} title='Registration per day chart'>
-                    <ParticipantChart participantsRegData={participantsRegData} />
+                    <ParticipantChart participantsRegData={participantsRegData}/>
                 </ModalComponent>
             </div>
         </div>
@@ -98,15 +117,15 @@ const ParticipantsPage = () => {
 const SearchParticipants = ({search, setSearch, onSearch, fetchData}) => {
 
     const handleChange = (e, key) => {
-        setSearch({ ...search, [key]: e.target.value });
+        setSearch({...search, [key]: e.target.value});
     }
     const resetSearch = async () => {
-        await setSearch({ email: '', fullName: '' });
+        await setSearch({email: '', fullName: ''});
         fetchData()
     }
 
     return (
-        <div className='p-2' >
+        <div className='p-2'>
             <h4>Search</h4>
             <InputGroup className="mb-3">
                 <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
@@ -134,7 +153,7 @@ const SearchParticipants = ({search, setSearch, onSearch, fetchData}) => {
                     <img
                         src={resetIcon}
                         alt='reset button'
-                        style={{width:20, height:20}}
+                        style={{width: 20, height: 20}}
                     />
                 </Button>
             </div>
