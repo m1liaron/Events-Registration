@@ -15,6 +15,6 @@ const start = async () => {
     }
 };
 
-start();
+// start();
 
 // run this code once

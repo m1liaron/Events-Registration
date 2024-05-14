@@ -12,7 +12,7 @@ const options = {
         start: '0'
     },
     headers: {
-        'X-RapidAPI-Key': '812c4f55c7msh8857b9c20af2a37p1a8a08jsn94846147918b',
+        'X-RapidAPI-Key': process.env.RADIAPI,
         'X-RapidAPI-Host': 'real-time-events-search.p.rapidapi.com'
     }
 };
@@ -39,6 +39,6 @@ async function start(){
         console.error(error);
     }
 }
-start()
+// start()
 
 // Here i make request on rapidapi.com for get events and save to db

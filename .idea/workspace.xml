@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a34e7e6f-8615-4d50-b49f-89827a81bf7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/rapidapi.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/rapidapi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="45417" />
+    <option name="totalTimeSeconds" value="45989" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -74,11 +74,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\public" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src\assets" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\assets\img" />
       <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\client\src\components\Form" />
-      <recent name="D:\Programmers\progrommer\Js_projects\React\events-registration\server" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -138,7 +138,7 @@
       <workItem from="1715595677981" duration="46000" />
       <workItem from="1715595814874" duration="167000" />
       <workItem from="1715601552716" duration="11646000" />
-      <workItem from="1715666744632" duration="5266000" />
+      <workItem from="1715666744632" duration="7376000" />
     </task>
     <task id="LOCAL-00001" summary="middle level&#10;Events board page: add ability to sort events by: title, event date, organizer.&#10;- Event registration page: add form validation&#10;- Event participants page: add ability to search participants by full name, email.">
       <option name="closed" value="true" />
@@ -188,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715671804437</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add logo and name to site">
+      <option name="closed" value="true" />
+      <created>1715672260261</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715672260261</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +210,7 @@
     <MESSAGE value="rewrite participants on custom hook and make search request, &#10;events: calendar filter by date" />
     <MESSAGE value="add:&#10;not found page, not found participants" />
     <MESSAGE value="removing unused components" />
-    <option name="LAST_COMMIT_MESSAGE" value="removing unused components" />
+    <MESSAGE value="add logo and name to site" />
+    <option name="LAST_COMMIT_MESSAGE" value="add logo and name to site" />
   </component>
 </project>
