@@ -12,7 +12,7 @@ const connectDB = require('../db/connect')
 const eventRouter = require('../routes/eventRoutes')
 const participantRouter = require('../routes/participantRouter')
 app.use('/events', eventRouter)
-app.use('./participants', participantRouter)
+app.use('/participants', participantRouter)
 
 const port = process.env.PORT || 5000;
 
