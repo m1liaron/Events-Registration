@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a34e7e6f-8615-4d50-b49f-89827a81bf7e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/Participant/SearchParticipants.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/NotFoundPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/NotFoundPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/ParticipantsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/ParticipantsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/participantRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/participantRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="44778" />
+    <option name="totalTimeSeconds" value="45417" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -145,7 +138,7 @@
       <workItem from="1715595677981" duration="46000" />
       <workItem from="1715595814874" duration="167000" />
       <workItem from="1715601552716" duration="11646000" />
-      <workItem from="1715666744632" duration="4593000" />
+      <workItem from="1715666744632" duration="5266000" />
     </task>
     <task id="LOCAL-00001" summary="middle level&#10;Events board page: add ability to sort events by: title, event date, organizer.&#10;- Event registration page: add form validation&#10;- Event participants page: add ability to search participants by full name, email.">
       <option name="closed" value="true" />
@@ -187,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715670815045</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="removing unused components">
+      <option name="closed" value="true" />
+      <created>1715671804437</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715671804437</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +201,7 @@
     <MESSAGE value="get events from api" />
     <MESSAGE value="rewrite participants on custom hook and make search request, &#10;events: calendar filter by date" />
     <MESSAGE value="add:&#10;not found page, not found participants" />
-    <option name="LAST_COMMIT_MESSAGE" value="add:&#10;not found page, not found participants" />
+    <MESSAGE value="removing unused components" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing unused components" />
   </component>
 </project>
