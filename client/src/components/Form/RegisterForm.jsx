@@ -23,7 +23,7 @@ const RegisterForm = () => {
             event_id: id,
         };
 
-         axios.post(`https://events-registration-server.vercel.app/participants/:${id}`, data)
+         axios.post(`https://events-registration-83va.onrender.com/participants/:${id}`, data)
             .then((response) => {
                 console.log(response)
                 navigate(-1)

@@ -20,7 +20,7 @@ const EventsList = () => {
     const [haveMore, setHaveMore] = useState(false);
     const [modalVisible, setModalVisible] = useState(false);
 
-    const {data, loading, error, fetchData} = useAxios(`https://events-registration-server.vercel.app/events?page=${page}&sortBy=${sortBy}&filterDate=${filterDate}`)
+    const {data, loading, error, fetchData} = useAxios(`https://events-registration-83va.onrender.com/events?page=${page}&sortBy=${sortBy}&filterDate=${filterDate}`)
 
 
     // set data to events state

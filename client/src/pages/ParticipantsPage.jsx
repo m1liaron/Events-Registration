@@ -18,7 +18,7 @@ const ParticipantsPage = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1000);
 
     const {id} = useParams()
-    const {data, loading, error, fetchData} = useAxios(`https://events-registration-server.vercel.app/participants/${id}`);
+    const {data, loading, error, fetchData} = useAxios(`https://events-registration-83va.onrender.com/participants/${id}`);
 
     useEffect(() => {
         if (data) {
