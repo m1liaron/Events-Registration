@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a34e7e6f-8615-4d50-b49f-89827a81bf7e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="a34e7e6f-8615-4d50-b49f-89827a81bf7e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="48850" />
+    <option name="totalTimeSeconds" value="49152" />
     <option name="gitIntegration" value="true" />
     <option name="naggedAbout" value="1" />
   </component>
@@ -146,7 +143,7 @@
       <workItem from="1715679430379" duration="58000" />
       <workItem from="1715701180692" duration="2761000" />
       <workItem from="1715839524007" duration="9000" />
-      <workItem from="1716462905815" duration="299000" />
+      <workItem from="1716462905815" duration="598000" />
     </task>
     <task id="LOCAL-00001" summary="middle level&#10;Events board page: add ability to sort events by: title, event date, organizer.&#10;- Event registration page: add form validation&#10;- Event participants page: add ability to search participants by full name, email.">
       <option name="closed" value="true" />
@@ -236,7 +233,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715702743897</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix start command">
+      <option name="closed" value="true" />
+      <created>1716463287652</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716463287652</updated>
+    </task>
+    <task id="LOCAL-00013" summary="setup gh-pages">
+      <option name="closed" value="true" />
+      <created>1716463465231</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716463465231</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +267,8 @@
     <MESSAGE value="commit function to deploy,(i don't need them to run again)" />
     <MESSAGE value="vercel" />
     <MESSAGE value="make request on vercel" />
-    <option name="LAST_COMMIT_MESSAGE" value="make request on vercel" />
+    <MESSAGE value="fix start command" />
+    <MESSAGE value="setup gh-pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup gh-pages" />
   </component>
 </project>
